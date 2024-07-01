@@ -18,6 +18,30 @@
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_DataTbael&Sequence_1",
+        "BirthDate&Sequence_2",
+        "Birthday&Sequence_2",
+        "Today&Sequence_2",
+        "Age&Sequence_2",
+        "Salary&Sequence_4",
+        "TaxRate&Sequence_4",
+        "TaxedSalary&Sequence_4",
+        "phone&Sequence_6",
+        "cleanPhone&Sequence_6",
+        "in_FullName&Sequence_8",
+        "FormattedName&Sequence_8",
+        "Birthdate&Sequence_11",
+        "ParsedDate&Sequence_11",
+        "FormattedDate&Sequence_11"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
     }
   ]
 }
