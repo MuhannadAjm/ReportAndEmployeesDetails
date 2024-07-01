@@ -409,7 +409,7 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[io_Datatabel]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="574.4,511.2" sap2010:WorkflowViewState.IdRef="ForEachRow_6">
+      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_DataTbael]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="574.4,511.2" sap2010:WorkflowViewState.IdRef="ForEachRow_6">
         <ui:ForEachRow.Body>
           <ActivityAction x:TypeArguments="sd:DataRow">
             <ActivityAction.Argument>
