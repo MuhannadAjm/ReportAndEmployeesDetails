@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="System_DownlodeReport" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1361.6,628.8" sap2010:WorkflowViewState.IdRef="System_DownlodeReport_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System.Net.Mail" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="System_DownlodeReport" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1361.6,628.8" sap2010:WorkflowViewState.IdRef="System_DownlodeReport_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System.Net.Mail" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:ummm="clr-namespace:UiPath.MicrosoftOffice365.Mail.Models;assembly=UiPath.MicrosoftOffice365" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -45,6 +45,12 @@
       <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
       <x:String>UiPath.MicrosoftOffice365.Activities</x:String>
       <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Mail.IMAP.Activities</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Mail.Models</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Files.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -102,18 +108,21 @@
       <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
       <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="System_DownlodeReport" sap:VirtualizedContainerService.HintSize="512,483.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="System_DownlodeReport" sap:VirtualizedContainerService.HintSize="512,483.20000000000005" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="MessagesList" />
+      <Variable x:TypeArguments="ummm:O365AttachmentLocalItem[]" Name="List" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetOutlookMailMessages Filter="{x:Null}" FilterByMessageIds="{x:Null}" TimeoutMS="{x:Null}" Account="MOHANNAD.SAMARA@keitmea.com" DisplayName="Get Outlook Mail Messages" GetAttachements="False" sap:VirtualizedContainerService.HintSize="449.6,56.8" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_2" MailFolder="Inbox" MarkAsRead="False" Messages="[MessagesList]" OnlyUnreadMessages="False" OrderByDate="NewestFirst" Top="30" />
+    <ui:GetOutlookMailMessages FilterByMessageIds="{x:Null}" TimeoutMS="{x:Null}" Account="AC1456@iu.edu.jo" DisplayName="Get Outlook Mail Messages" Filter="[SenderEmailAddress] = 'MOHANNAD.SAMARA@keitmea.com'" GetAttachements="False" sap:VirtualizedContainerService.HintSize="449.6,56.8" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_3" MailFolder="Inbox" MarkAsRead="False" Messages="[MessagesList]" OnlyUnreadMessages="False" OrderByDate="NewestFirst" Top="15" />
     <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each currentMailMessage" sap:VirtualizedContainerService.HintSize="449.6,337.6" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[MessagesList]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="snm:MailMessage">
@@ -126,7 +135,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:SaveMailAttachments Attachments="{x:Null}" DisplayName="Save Attachments" ExcludeInlineAttachments="False" FolderPath="C:\Users\ajame\OneDrive\Documents\UiPath\REF_ReportAndEmployeesDetails\Data\Input" sap:VirtualizedContainerService.HintSize="353.6,111.2" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_1" Message="[currentMailMessage]" OverwriteExisting="False" />
+            <ui:SaveMailAttachments Attachments="{x:Null}" DisplayName="Save Attachments" ExcludeInlineAttachments="False" FolderPath="Input" sap:VirtualizedContainerService.HintSize="353.6,111.2" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_1" Message="[currentMailMessage]" OverwriteExisting="False" />
           </Sequence>
         </ActivityAction>
       </ui:ForEach.Body>
