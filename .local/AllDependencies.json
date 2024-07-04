@@ -22234,9 +22234,9 @@
     "restore": {
       "projectUniqueName": "ReportAndEmployeesDetails",
       "projectName": "ReportAndEmployeesDetails",
-      "projectPath": "C:\\Users\\ajame\\OneDrive\\Documents\\UiPath\\ReportAndEmployeesDetails\\.local",
+      "projectPath": "E:\\GitHub\\ReportAndEmployeesDetails\\ReportAndEmployeesDetails\\.local",
       "packagesPath": "C:\\Users\\ajame\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ajame\\OneDrive\\Documents\\UiPath\\ReportAndEmployeesDetails\\.local",
+      "outputPath": "E:\\GitHub\\ReportAndEmployeesDetails\\ReportAndEmployeesDetails\\.local",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ]

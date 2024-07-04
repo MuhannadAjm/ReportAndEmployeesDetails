@@ -9,20 +9,18 @@
       "AddedNamespaces": null
     },
     {
-      "Path": "System_1/System_DownlodeReport.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "List&Sequence_1",
-        "MessagesList&Sequence_1"
-      ],
-      "ArgumentsSectionElementsOrder": [],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "duration&Sequence_18",
+        "formattedDuration&Sequence_18",
+        "dtStartTime&Sequence_1",
+        "formattedDuration&Sequence_1",
+        "duration&Sequence_1",
+        "MessagesList&Sequence_13",
+        "List&Sequence_13",
+        "dt_DataTabel1&Sequence_16",
+        "dt_DataTabel2&Sequence_16",
         "dt_DataTbael&Sequence_1",
         "BirthDate&Sequence_2",
         "Birthday&Sequence_2",
@@ -40,6 +38,19 @@
         "FormattedDate&Sequence_11"
       ],
       "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "System_1/BusinessRuleException.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt&Sequence_1",
+        "Password&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "io_DataTabel"
+      ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     }
